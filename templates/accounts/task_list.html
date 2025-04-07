@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Task List</title>
+    <title>All Tasks</title>
 </head>
 <body>
     <h1>All Tasks</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Task</button>
+    </form>
+
     <ul>
         {% for task in tasks %}
             <li>
