@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tasks</title>
+  <title>Login</title>
 </head>
 <body>
   <nav style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
@@ -19,21 +19,13 @@
     </div>
   </nav>
 
-  <div style="max-width: 600px; margin: 2rem auto;">
-    <h2>All Tasks</h2>
-    <form method="post" style="margin-bottom: 2rem;">
+  <div style="display: flex; justify-content: center; align-items: center; height: 90vh;">
+    <form method="post" style="padding: 2rem; border-radius: 10px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
       {% csrf_token %}
+      <h2 style="text-align: center;">Login</h2>
       {{ form.as_p }}
-      <button type="submit" style="background-color: #5f3dc4; color: #fff; padding: 0.5rem 1rem; border: none; border-radius: 5px;">Add Task</button>
+      <button type="submit" style="margin-top: 1rem; width: 100%; background-color: #5f3dc4; color: #fff; padding: 0.5rem; border: none; border-radius: 5px;">Login</button>
     </form>
-
-    <ul>
-      {% for task in tasks %}
-        <li>{{ task.description }}</li>
-      {% empty %}
-        <li>No tasks yet!</li>
-      {% endfor %}
-    </ul>
   </div>
 </body>
 </html>
